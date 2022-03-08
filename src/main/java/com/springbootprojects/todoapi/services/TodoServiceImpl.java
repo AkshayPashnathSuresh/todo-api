@@ -6,6 +6,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class TodoServiceImpl implements TodoService {
@@ -24,7 +25,8 @@ public class TodoServiceImpl implements TodoService {
 
     @Override
     public Todo getTodoById(Long id) {
-        return todoRepository.findById(id).get();
+        Optional<Todo> todo = todoRepository.findById(id);
+        return todo.orElse(null);
     }
 
     @Override
