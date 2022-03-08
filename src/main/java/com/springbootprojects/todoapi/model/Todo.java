@@ -14,7 +14,6 @@ import java.sql.Timestamp;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@Builder
 public class Todo {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
