@@ -35,12 +35,12 @@ public class TodoServiceImpl implements TodoService {
     }
 
     @Override
-    public void updateTodo(Long id, Todo todo) {
+    public Todo updateTodo(Long id, Todo todo) {
         Todo todoFromDb = todoRepository.findById(id).get();
         todoFromDb.setTitle(todo.getTitle());
         todoFromDb.setDescription(todo.getDescription());
         todoFromDb.setTodoStatus(todo.getTodoStatus());
-        todoRepository.save(todoFromDb);
+        return todoRepository.save(todoFromDb);
     }
 
     @Override
